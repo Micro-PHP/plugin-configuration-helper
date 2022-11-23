@@ -1,0 +1,21 @@
+{
+    "name": "micro/plugin-configuration-helper",
+    "description": "Micro Framework: Configuration helper tool",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0",
+    "autoload": {
+        "psr-4": {
+            "Micro\\Plugin\\Configuration\\Helper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stanislau Komar",
+            "email": "stanislau_komar@epam.com"
+        }
+    ],
+    "require": {
+        "micro/kernel": "^1"
+    }
+}
