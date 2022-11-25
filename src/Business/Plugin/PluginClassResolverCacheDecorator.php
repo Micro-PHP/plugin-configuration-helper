@@ -2,8 +2,6 @@
 
 namespace Micro\Plugin\Configuration\Helper\Business\Plugin;
 
-use Micro\Framework\Kernel\Plugin\ApplicationPluginInterface;
-
 class PluginClassResolverCacheDecorator implements PluginClassResolverInterface
 {
     private array $cache;
@@ -18,9 +16,9 @@ class PluginClassResolverCacheDecorator implements PluginClassResolverInterface
     /**
      * @param string $pluginAlias
      *
-     * @return ApplicationPluginInterface|null
+     * @return object|null
      */
-    public function resolve(string $pluginAlias): ApplicationPluginInterface|null
+    public function resolve(string $pluginAlias): object|null
     {
         if(in_array($pluginAlias, $this->cache)) {
             return $this->cache[$pluginAlias];
