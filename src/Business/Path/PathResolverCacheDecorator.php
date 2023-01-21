@@ -1,30 +1,31 @@
 <?php
 
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\Configuration\Helper\Business\Path;
 
 class PathResolverCacheDecorator implements PathResolverInterface
 {
     /**
-     * @var array
+     * @var array<string, string>
      */
     private array $cache;
 
-    /**
-     * @param PathResolverInterface $pathResolver
-     */
     public function __construct(private readonly PathResolverInterface $pathResolver)
     {
         $this->cache = [];
     }
 
-    /**
-     * @param string $relative
-     *
-     * @return string
-     */
     public function resolve(string $relative): string
     {
-        if(!array_key_exists($relative, $this->cache)) {
+        if (!\array_key_exists($relative, $this->cache)) {
             $this->cache[$relative] = $this->pathResolver->resolve($relative);
         }
 

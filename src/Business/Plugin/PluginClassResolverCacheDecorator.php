@@ -1,26 +1,31 @@
 <?php
 
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\Configuration\Helper\Business\Plugin;
 
 class PluginClassResolverCacheDecorator implements PluginClassResolverInterface
 {
-    private array $cache;
     /**
-     * @param PluginClassResolverInterface $pluginClassResolver
+     * @var array<string, object>
      */
+    private array $cache;
+
     public function __construct(private readonly PluginClassResolverInterface $pluginClassResolver)
     {
         $this->cache = [];
     }
 
-    /**
-     * @param string $pluginAlias
-     *
-     * @return object|null
-     */
-    public function resolve(string $pluginAlias): object|null
+    public function resolve(string $pluginAlias): object
     {
-        if(in_array($pluginAlias, $this->cache)) {
+        if (\array_key_exists($pluginAlias, $this->cache)) {
             return $this->cache[$pluginAlias];
         }
 
