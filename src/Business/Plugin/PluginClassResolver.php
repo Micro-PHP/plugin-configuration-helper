@@ -1,5 +1,14 @@
 <?php
 
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\Configuration\Helper\Business\Plugin;
 
 use Micro\Framework\Kernel\Configuration\Exception\InvalidConfigurationException;
@@ -7,9 +16,6 @@ use Micro\Framework\Kernel\KernelInterface;
 
 class PluginClassResolver implements PluginClassResolverInterface
 {
-    /**
-     * @param KernelInterface $kernel
-     */
     public function __construct(private readonly KernelInterface $kernel)
     {
     }
@@ -17,10 +23,10 @@ class PluginClassResolver implements PluginClassResolverInterface
     /**
      * {@inheritDoc}
      */
-    public function resolve(string $pluginAlias): object|null
+    public function resolve(string $pluginAlias): object
     {
         foreach ($this->kernel->plugins() as $plugin) {
-            if($this->getPluginName($plugin) === $pluginAlias) {
+            if ($this->getPluginName($plugin) === $pluginAlias) {
                 return $plugin;
             }
         }
@@ -28,21 +34,17 @@ class PluginClassResolver implements PluginClassResolverInterface
         throw new InvalidConfigurationException(sprintf('Plugin %s is not installed.', $pluginAlias));
     }
 
-    /**
-     * @param object $plugin
-     *
-     * @return string
-     */
     protected function getPluginName(object $plugin): string
     {
         // TODO: Create interface for plugin naming
-        if(method_exists($plugin, 'name')) {
+        if (method_exists($plugin, 'name')) {
             return $plugin->name();
         }
 
-        $pluginName = get_class($plugin);
-        if(class_exists($pluginName)) {
+        $pluginName = \get_class($plugin);
+        if (class_exists($pluginName)) {
             $exploded = explode('\\', $pluginName);
+
             return array_pop($exploded);
         }
 

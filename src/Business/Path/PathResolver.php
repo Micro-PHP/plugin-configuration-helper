@@ -1,38 +1,43 @@
 <?php
 
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\Configuration\Helper\Business\Path;
 
 use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverInterface;
 
 class PathResolver implements PathResolverInterface
 {
-    /**
-     * @param PluginClassResolverInterface $pluginClassResolver
-     */
     public function __construct(private readonly PluginClassResolverInterface $pluginClassResolver)
     {
     }
 
-    /**
-     * @param string $relative
-     * @return string
-     * @throws \ReflectionException
-     */
     public function resolve(string $relative): string
     {
-        if(!str_starts_with($relative, '@')) {
+        if (!str_starts_with($relative, '@')) {
             return $relative;
         }
 
-        $alias = explode(DIRECTORY_SEPARATOR, $relative);
+        $alias = explode(\DIRECTORY_SEPARATOR, $relative);
 
         $plugin = $this->pluginClassResolver->resolve(ltrim($alias[0], '@'));
         $reflection = new \ReflectionClass($plugin);
 
         $file = $reflection->getFileName();
-        $basePath = dirname($file);
+        if (false === $file) {
+            return $relative;
+        }
+
+        $basePath = \dirname($file);
         $alias[0] = $basePath;
 
-        return implode(DIRECTORY_SEPARATOR, $alias);
+        return implode(\DIRECTORY_SEPARATOR, $alias);
     }
 }

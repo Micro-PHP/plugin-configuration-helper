@@ -1,10 +1,19 @@
 <?php
 
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\Configuration\Helper;
 
 use Micro\Component\DependencyInjection\Container;
 use Micro\Framework\Kernel\KernelInterface;
-use Micro\Framework\Kernel\Plugin\AbstractPlugin;
+use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
 use Micro\Kernel\App\AppKernelInterface;
 use Micro\Plugin\Configuration\Helper\Business\Path\PathResolverFactory;
 use Micro\Plugin\Configuration\Helper\Business\Path\PathResolverFactoryInterface;
@@ -14,7 +23,7 @@ use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverInterfa
 use Micro\Plugin\Configuration\Helper\Facade\ConfigurationHelperFacade;
 use Micro\Plugin\Configuration\Helper\Facade\ConfigurationHelperFacadeInterface;
 
-class ConfigurationHelperPlugin extends AbstractPlugin
+class ConfigurationHelperPlugin implements DependencyProviderInterface
 {
     /**
      * {@inheritDoc}
@@ -26,11 +35,6 @@ class ConfigurationHelperPlugin extends AbstractPlugin
         });
     }
 
-    /**
-     * @param KernelInterface $kernel
-     *
-     * @return ConfigurationHelperFacadeInterface
-     */
     protected function createFacade(KernelInterface $kernel): ConfigurationHelperFacadeInterface
     {
         $classResolverFactory = $this->createPluginClassResolverFactory($kernel);
@@ -40,21 +44,11 @@ class ConfigurationHelperPlugin extends AbstractPlugin
         return new ConfigurationHelperFacade($pathResolver);
     }
 
-    /**
-     * @param KernelInterface $kernel
-     *
-     * @return PluginClassResolverFactoryInterface
-     */
     protected function createPluginClassResolverFactory(KernelInterface $kernel): PluginClassResolverFactoryInterface
     {
         return new PluginClassResolverFactory($kernel);
     }
 
-    /**
-     * @param PluginClassResolverInterface $pluginClassResolver
-     *
-     * @return PathResolverFactoryInterface
-     */
     protected function createPathResolverFactoryInterface(PluginClassResolverInterface $pluginClassResolver): PathResolverFactoryInterface
     {
         return new PathResolverFactory($pluginClassResolver);
