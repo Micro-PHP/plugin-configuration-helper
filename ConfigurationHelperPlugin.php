@@ -9,19 +9,19 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper;
+namespace Micro\Plugin\ConfigurationHelper;
 
-use Micro\Component\DependencyInjection\Container;
+use Micro\Framework\DependencyInjection\Container;
 use Micro\Framework\Kernel\KernelInterface;
-use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
-use Micro\Kernel\App\AppKernelInterface;
-use Micro\Plugin\Configuration\Helper\Business\Path\PathResolverFactory;
-use Micro\Plugin\Configuration\Helper\Business\Path\PathResolverFactoryInterface;
-use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverFactory;
-use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverFactoryInterface;
-use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverInterface;
-use Micro\Plugin\Configuration\Helper\Facade\ConfigurationHelperFacade;
-use Micro\Plugin\Configuration\Helper\Facade\ConfigurationHelperFacadeInterface;
+use Micro\Framework\BootDependency\Plugin\DependencyProviderInterface;
+use Micro\Framework\KernelApp\AppKernelInterface;
+use Micro\Plugin\ConfigurationHelper\Business\Path\PathResolverFactory;
+use Micro\Plugin\ConfigurationHelper\Business\Path\PathResolverFactoryInterface;
+use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverFactory;
+use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverFactoryInterface;
+use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverInterface;
+use Micro\Plugin\ConfigurationHelper\Facade\ConfigurationHelperFacade;
+use Micro\Plugin\ConfigurationHelper\Facade\ConfigurationHelperFacadeInterface;
 
 class ConfigurationHelperPlugin implements DependencyProviderInterface
 {

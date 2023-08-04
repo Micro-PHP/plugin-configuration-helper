@@ -9,7 +9,7 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Business\Path;
+namespace Micro\Plugin\ConfigurationHelper\Business\Path;
 
 class PathResolverCacheDecorator implements PathResolverInterface
 {

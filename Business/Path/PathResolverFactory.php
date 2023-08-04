@@ -9,9 +9,9 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Business\Path;
+namespace Micro\Plugin\ConfigurationHelper\Business\Path;
 
-use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverInterface;
+use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverInterface;
 
 class PathResolverFactory implements PathResolverFactoryInterface
 {

@@ -9,9 +9,9 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Business\Plugin;
+namespace Micro\Plugin\ConfigurationHelper\Business\Plugin;
 
-use Micro\Framework\Kernel\Configuration\Exception\InvalidConfigurationException;
+use Micro\Framework\BootConfiguration\Configuration\Exception\InvalidConfigurationException;
 use Micro\Framework\Kernel\KernelInterface;
 
 class PluginClassResolver implements PluginClassResolverInterface

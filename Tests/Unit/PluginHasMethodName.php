@@ -11,7 +11,7 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Test\Unit;
+namespace Micro\Plugin\ConfigurationHelper\Tests\Unit;
 
 /**
  * @author Stanislau Komar <head.trackingsoft@gmail.com>

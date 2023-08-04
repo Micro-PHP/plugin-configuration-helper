@@ -9,9 +9,9 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Facade;
+namespace Micro\Plugin\ConfigurationHelper\Facade;
 
-use Micro\Plugin\Configuration\Helper\Business\Path\PathResolverInterface;
+use Micro\Plugin\ConfigurationHelper\Business\Path\PathResolverInterface;
 
 class ConfigurationHelperFacade implements ConfigurationHelperFacadeInterface
 {

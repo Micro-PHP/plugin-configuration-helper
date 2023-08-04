@@ -11,10 +11,10 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Test\Unit\Business\Plugin;
+namespace Micro\Plugin\ConfigurationHelper\Tests\Unit\Business\Plugin;
 
-use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverCacheDecorator;
-use Micro\Plugin\Configuration\Helper\Business\Plugin\PluginClassResolverInterface;
+use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverCacheDecorator;
+use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverInterface;
 use PHPUnit\Framework\TestCase;
 
 class PluginClassResolverCacheDecoratorTest extends TestCase

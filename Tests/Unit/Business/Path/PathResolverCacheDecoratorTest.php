@@ -11,10 +11,10 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Test\Unit\Business\Path;
+namespace Micro\Plugin\ConfigurationHelper\Tests\Unit\Business\Path;
 
-use Micro\Plugin\Configuration\Helper\Business\Path\PathResolverCacheDecorator;
-use Micro\Plugin\Configuration\Helper\Business\Path\PathResolverInterface;
+use Micro\Plugin\ConfigurationHelper\Business\Path\PathResolverCacheDecorator;
+use Micro\Plugin\ConfigurationHelper\Business\Path\PathResolverInterface;
 use PHPUnit\Framework\TestCase;
 
 class PathResolverCacheDecoratorTest extends TestCase

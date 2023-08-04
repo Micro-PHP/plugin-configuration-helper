@@ -9,9 +9,9 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Facade;
+namespace Micro\Plugin\ConfigurationHelper\Facade;
 
-use Micro\Framework\Kernel\Configuration\Exception\InvalidConfigurationException;
+use Micro\Framework\BootConfiguration\Configuration\Exception\InvalidConfigurationException;
 
 interface ConfigurationHelperFacadeInterface
 {

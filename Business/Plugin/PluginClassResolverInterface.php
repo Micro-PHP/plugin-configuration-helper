@@ -9,14 +9,14 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Business\Path;
+namespace Micro\Plugin\ConfigurationHelper\Business\Plugin;
 
-use Micro\Framework\Kernel\Configuration\Exception\InvalidConfigurationException;
+use Micro\Framework\BootConfiguration\Configuration\Exception\InvalidConfigurationException;
 
-interface PathResolverInterface
+interface PluginClassResolverInterface
 {
     /**
      * @throws InvalidConfigurationException
      */
-    public function resolve(string $relative): string;
+    public function resolve(string $pluginAlias): object;
 }

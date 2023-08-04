@@ -11,12 +11,12 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Configuration\Helper\Test\Unit;
+namespace Micro\Plugin\ConfigurationHelper\Tests\Unit;
 
-use Micro\Framework\Kernel\Configuration\Exception\InvalidConfigurationException;
-use Micro\Kernel\App\AppKernel;
-use Micro\Plugin\Configuration\Helper\ConfigurationHelperPlugin;
-use Micro\Plugin\Configuration\Helper\Facade\ConfigurationHelperFacadeInterface;
+use Micro\Framework\BootConfiguration\Configuration\Exception\InvalidConfigurationException;
+use Micro\Framework\KernelApp\AppKernel;
+use Micro\Plugin\ConfigurationHelper\ConfigurationHelperPlugin;
+use Micro\Plugin\ConfigurationHelper\Facade\ConfigurationHelperFacadeInterface;
 use PHPUnit\Framework\TestCase;
 
 class ConfigurationHelperPluginTest extends TestCase

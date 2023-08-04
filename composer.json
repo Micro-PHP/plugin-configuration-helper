@@ -23,13 +23,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Micro\\Plugin\\Configuration\\Helper\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Micro\\Plugin\\Configuration\\Helper\\Test\\Unit\\": "tests/Unit"
-        }
+            "Micro\\Plugin\\ConfigurationHelper\\": "/"
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "config": {
         "allow-plugins": {
