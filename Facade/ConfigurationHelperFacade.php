@@ -13,10 +13,11 @@ namespace Micro\Plugin\ConfigurationHelper\Facade;
 
 use Micro\Plugin\ConfigurationHelper\Business\Path\PathResolverInterface;
 
-class ConfigurationHelperFacade implements ConfigurationHelperFacadeInterface
+readonly class ConfigurationHelperFacade implements ConfigurationHelperFacadeInterface
 {
-    public function __construct(private readonly PathResolverInterface $pathResolver)
-    {
+    public function __construct(
+        private PathResolverInterface $pathResolver
+    ) {
     }
 
     public function resolvePath(string $relativePath): string

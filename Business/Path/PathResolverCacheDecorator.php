@@ -18,8 +18,9 @@ class PathResolverCacheDecorator implements PathResolverInterface
      */
     private array $cache;
 
-    public function __construct(private readonly PathResolverInterface $pathResolver)
-    {
+    public function __construct(
+        private readonly PathResolverInterface $pathResolver
+    ) {
         $this->cache = [];
     }
 

@@ -14,10 +14,11 @@ namespace Micro\Plugin\ConfigurationHelper\Business\Plugin;
 use Micro\Framework\BootConfiguration\Configuration\Exception\InvalidConfigurationException;
 use Micro\Framework\Kernel\KernelInterface;
 
-class PluginClassResolver implements PluginClassResolverInterface
+readonly class PluginClassResolver implements PluginClassResolverInterface
 {
-    public function __construct(private readonly KernelInterface $kernel)
-    {
+    public function __construct(
+        private KernelInterface $kernel
+    ) {
     }
 
     /**

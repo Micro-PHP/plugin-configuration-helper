@@ -18,8 +18,9 @@ class PluginClassResolverCacheDecorator implements PluginClassResolverInterface
      */
     private array $cache;
 
-    public function __construct(private readonly PluginClassResolverInterface $pluginClassResolver)
-    {
+    public function __construct(
+        private readonly PluginClassResolverInterface $pluginClassResolver
+    ) {
         $this->cache = [];
     }
 

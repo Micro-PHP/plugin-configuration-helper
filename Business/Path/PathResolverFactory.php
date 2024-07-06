@@ -13,10 +13,11 @@ namespace Micro\Plugin\ConfigurationHelper\Business\Path;
 
 use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverInterface;
 
-class PathResolverFactory implements PathResolverFactoryInterface
+readonly class PathResolverFactory implements PathResolverFactoryInterface
 {
-    public function __construct(private readonly PluginClassResolverInterface $pluginClassResolver)
-    {
+    public function __construct(
+        private PluginClassResolverInterface $pluginClassResolver
+    ) {
     }
 
     public function create(): PathResolverInterface

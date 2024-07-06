@@ -25,9 +25,6 @@ use Micro\Plugin\ConfigurationHelper\Facade\ConfigurationHelperFacadeInterface;
 
 class ConfigurationHelperPlugin implements DependencyProviderInterface
 {
-    /**
-     * {@inheritDoc}
-     */
     public function provideDependencies(Container $container): void
     {
         $container->register(ConfigurationHelperFacadeInterface::class, function (AppKernelInterface $kernel) {

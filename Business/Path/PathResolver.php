@@ -13,10 +13,11 @@ namespace Micro\Plugin\ConfigurationHelper\Business\Path;
 
 use Micro\Plugin\ConfigurationHelper\Business\Plugin\PluginClassResolverInterface;
 
-class PathResolver implements PathResolverInterface
+readonly class PathResolver implements PathResolverInterface
 {
-    public function __construct(private readonly PluginClassResolverInterface $pluginClassResolver)
-    {
+    public function __construct(
+        private PluginClassResolverInterface $pluginClassResolver
+    ) {
     }
 
     public function resolve(string $relative): string

@@ -13,15 +13,13 @@ namespace Micro\Plugin\ConfigurationHelper\Business\Plugin;
 
 use Micro\Framework\Kernel\KernelInterface;
 
-class PluginClassResolverFactory implements PluginClassResolverFactoryInterface
+readonly class PluginClassResolverFactory implements PluginClassResolverFactoryInterface
 {
-    public function __construct(private readonly KernelInterface $kernel)
-    {
+    public function __construct(
+        private KernelInterface $kernel
+    ) {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function create(): PluginClassResolverInterface
     {
         return new PluginClassResolverCacheDecorator(
